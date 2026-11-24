@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Ayumica">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="rgb(255, 122, 184)"/><stop offset="1" stop-color="rgb(122, 60, 255)"/></linearGradient></defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <polyline points="118,404 256,92 394,404" fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="222" y="262" width="68" height="68" rx="12" fill="#fff"/>
+  <polygon points="392,82 403.0,121.0 442,132 403.0,143.0 392,182 381.0,143.0 342,132 381.0,121.0" fill="#fff"/>
+</svg>

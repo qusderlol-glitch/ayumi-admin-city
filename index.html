@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ayumica</title>
 <meta name="description" content="Бесплатный город-песочница для Windows: ты — Аюми, админ города. Жители, преступники, полиция, Ayumi OS.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -21,6 +23,9 @@ header.top { position: sticky; top: 0; z-index: 5; background: rgba(18,15,29,.82
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .logo { font-weight: 900; letter-spacing: .5px; color: var(--ink); text-decoration: none; }
 .logo b { color: var(--pink); }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { width: 30px; height: 30px; }
+.hero-mark { width: 92px; height: 92px; border-radius: 22px; box-shadow: 0 12px 40px rgba(200,70,160,.5); margin-bottom: 18px; }
 nav a { color: var(--dim); text-decoration: none; margin-left: 22px; font-weight: 700; }
 nav a:hover { color: var(--pink); }
 
@@ -70,12 +75,13 @@ footer { padding: 36px 0 50px; color: var(--dim); font-size: 14px; border-top: 1
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#"><b>AYUMICA</b></a>
+  <a class="logo" href="#"><img src="img/logo.svg" alt=""><b>AYUMICA</b></a>
   <nav><a href="#features" class="opt">Что есть</a><a href="#shots" class="opt">Скриншоты</a><a href="#install">Как скачать</a><a href="#controls" class="opt">Управление</a></nav>
 </div></header>
 
 <div class="hero"><div class="wrap">
   <div>
+    <img class="hero-mark" src="img/logo.svg" alt="Логотип Ayumica">
     <h1>AYUMICA</h1>
     <div class="sub">ГОРОД, ГДЕ ТЫ — АДМИН</div>
     <p class="lead">Город-песочница, где ты — Аюми, админ и разработчик города. Строй дома и школы, следи за сотнями жителей, лови преступников и правь миром с ноутбука через Ayumi OS.</p>
