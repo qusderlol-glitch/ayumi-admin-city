@@ -40,6 +40,7 @@ h1 { font-size: clamp(54px, 9vw, 104px); line-height: .9; margin: 0; font-weight
 .btn { display: inline-flex; flex-direction: column; padding: 14px 26px; border-radius: 16px; text-decoration: none; font-weight: 900; font-size: 19px; color: #fff; background: linear-gradient(180deg, var(--pink), var(--pink2)); box-shadow: 0 10px 30px rgba(255,110,170,.35); transition: transform .15s, box-shadow .15s; }
 .btn small { font-weight: 700; font-size: 13px; opacity: .85; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(255,110,170,.5); }
+.btn.off { opacity: .45; pointer-events: none; box-shadow: none; }
 .btn.ghost { background: transparent; border: 2px solid var(--line); box-shadow: none; color: var(--ink); }
 .ver { margin-top: 16px; color: var(--dim); font-size: 14px; }
 .hero img { width: 100%; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.5); }
@@ -171,7 +172,14 @@ fetch('https://api.github.com/repos/qusderlol-glitch/ayumi-admin-city/releases/l
     const ul = document.getElementById('news-list'); ul.textContent = '';
     for (const t of items) { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); }
   })
-  .catch(() => { document.getElementById('news-list').innerHTML = '<li>Список изменений — на странице релиза.</li>'; });
+  .catch(st => {
+    // 404: the owner closed downloads (every release is hidden)
+    if (st === 404) {
+      for (const id of ['dl-launcher', 'dl-zip']) { const b = document.getElementById(id); b.classList.add('off'); b.removeAttribute('href'); b.querySelector('small').textContent = 'скачивание временно закрыто'; }
+      document.getElementById('ver').textContent = 'Скачивание временно закрыто. Загляни позже.';
+    }
+    document.getElementById('news-list').innerHTML = '<li>Список изменений — на странице релиза.</li>';
+  });
 // screenshots open full size
 const zoom = document.getElementById('zoom');
 document.querySelectorAll('.shots img').forEach(i => i.onclick = () => { zoom.querySelector('img').src = i.src; zoom.style.display = 'grid'; });
